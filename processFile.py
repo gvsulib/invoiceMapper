@@ -53,7 +53,10 @@ def formatDate(date):
     day = "0" + splitDate[1]
   else:
     day = splitDate[1]
-  year = "20" + splitDate[2]
+  if len(splitDate[2]) < 4:
+    year = "20" + splitDate[2]
+  else:
+    year = splitDate[2]
   return year + "-" + month + "-" + day
 
 def checkSyntax(csvFile, fieldNames, requiredFields):
