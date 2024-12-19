@@ -126,11 +126,11 @@ try:
     csvfile.close
 except FileNotFoundError:
    print("Cannot find file with filename: " + filename + " in current directory, check your input, shutting down.")
-   sys.exit
+   sys.exit()
 except SyntaxError:
   print("Problem with structure of csv file:  File cannot be parsed, indicating the .CSV file is corrupt.\n")
   print("Try exporting a new csv file.")
-  sys.exit
+  sys.exit()
 
 checkSyntax(invoiceData, fieldNames, requiredFields)
 
