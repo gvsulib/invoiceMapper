@@ -66,7 +66,7 @@ def checkSyntax(csvFile, fieldNames, requiredFields):
 
   #normalize all field names to lower case and strip problematic characters
   for i in range (len(fieldNames)):
-    fieldNames[i] = fieldNames[i].lower().replace("\ufeff","").replace("\"", "")
+    fieldNames[i] = fieldNames[i].lower().trim().replace("\ufeff","").replace("\"", "")
   
   #check if required columns are present
   for name in requiredFields:
@@ -126,9 +126,11 @@ try:
     csvfile.close
 except FileNotFoundError:
    print("Cannot find file with filename: " + filename + " in current directory, check your input, shutting down.")
+   sys.exit
 except SyntaxError:
   print("Problem with structure of csv file:  File cannot be parsed, indicating the .CSV file is corrupt.\n")
   print("Try exporting a new csv file.")
+  sys.exit
 
 checkSyntax(invoiceData, fieldNames, requiredFields)
 
