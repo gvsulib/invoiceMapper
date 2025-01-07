@@ -66,7 +66,7 @@ def checkSyntax(csvFile, fieldNames, requiredFields):
 
   #normalize all field names to lower case and strip problematic characters
   for i in range (len(fieldNames)):
-    fieldNames[i] = fieldNames[i].lower().trim().replace("\ufeff","").replace("\"", "")
+    fieldNames[i] = fieldNames[i].lower().strip().replace("\ufeff","").replace("\"", "")
   
   #check if required columns are present
   for name in requiredFields:
