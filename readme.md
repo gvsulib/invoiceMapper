@@ -1,6 +1,6 @@
 # Using the Folio-to-Workday Invoice Mapper
 
-The invoice mapper is a small script written in python (version 3) that takes a CSV file representing Folio invoices, and maps them into a different csv file that workday can ingest.  The script only does the mapping, the new workday ingest file will need to be moved manually to a location where Workday can access it.  In the future, we can explore having the script do that move as well, but for the present, since files will need to be checked, weÕve agreed to do it manually.
+The invoice mapper is a small script written in python (version 3) that takes a CSV file representing Folio invoices, and maps them into a different csv file that workday can ingest.  The script only does the mapping, the new workday ingest file will need to be moved manually to a location where Workday can access it.  In the future, we can explore having the script do that move as well, but for the present, since files will need to be checked, we've agreed to do it manually.
 
 Before you start, be sure you've moved the Folio invoice export file to the same directory where the script resides.
 
@@ -8,13 +8,13 @@ To use the script, first fire up the windows command prompt:
 
 Click on the "start" menu, then type "cmd" into the blank and hit return.
 
-A command prompt window should appear.  To execute the script, youÕll need to move your command prompt to the directory where the script and the ingest file are located:
+A command prompt window should appear.  To execute the script, you'll need to move your command prompt to the directory where the script and the ingest file are located:
 
 At the prompt, type:  
 
 	cd /path/to/file
 
-Once in the directory, you'll need to start the script.  To do this, youÕll need three things:
+Once in the directory, you'll need to start the script.  To do this, you'll need three things:
 
 The name of the script itself (processFile.py)
 The name of the file to be transformed
@@ -35,7 +35,7 @@ It checks for proper CSV syntax (commas where they need to be, lines properly te
 
 If any of these checks fail, the script will shut down and display an error message indicating what the problem is and where.  You'll need to correct it before you can run the script.  If you can't make sense of a specific error message, let me know-it may be an issue I didn't anticipate.  You can also request that I reword error messages to make them clearer-I welcome this kind of feedback!
 
-If it's successful, the script will tell you so and deposit a new file in the directory called "workday.csv".  You can open this is any program that can interpret csv files to verify that itÕs correct.
+If it's successful, the script will tell you so and deposit a new file in the directory called "workday.csv".  You can open this is any program that can interpret csv files to verify that it's correct.
 
 If you run the script when there is a "workday.csv" file already in the directory, it will overwrite the existing file with a new one.
 
